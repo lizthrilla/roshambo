@@ -29,16 +29,22 @@ const handleButtonClick = (event) => {
 
 
   if (player === 'rock' && computer === 'scissors' || player === 'scissors' && computer === 'paper' || player === 'paper' && computer === 'rock'){
+    $('figure.player').className = 'player win'
+    $('figure.computer').className = 'computer lose'
     incrementPlayerCount()
   }
 
 
   // computer win
   if (player === 'scissors' && computer === 'rock' || player === 'rock' && computer === 'paper' || player === 'paper' && computer === 'scissors') {
+    $('figure.player').className = 'player lose'
+    $('figure.computer').className = 'computer win'
     incrementComputerCount()
   }
   //draw
   if (player === computer) {
+    $('figure.player').className = 'player draw'
+    $('figure.computer').className = 'computer draw'
     console.log('Draw')
   }
 }
